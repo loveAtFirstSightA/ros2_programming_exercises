@@ -41,6 +41,10 @@ add_executable(client_c src/client_c.cpp)
 target_include_directories(client_c PRIVATE include)
 ament_target_dependencies(client_c ${dependencies})
 
+add_executable(client_d src/client_d.cpp)
+target_include_directories(client_d PRIVATE include)
+ament_target_dependencies(client_d ${dependencies})
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
@@ -66,6 +70,10 @@ install(TARGETS client_b
 )
 
 install(TARGETS client_c
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(TARGETS client_d
   DESTINATION lib/${PROJECT_NAME}
 )
 
